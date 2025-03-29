@@ -80,7 +80,6 @@ func (cfg *apiConfig) handlerUploadThumbnail(w http.ResponseWriter, r *http.Requ
 	imageFilePath := filepath.Join(cfg.assetsRoot, imageFileName)
 	imageFile, err := os.Create(imageFilePath)
 	if err != nil {
-		fmt.Println(imageFilePath)
 		respondWithError(w, http.StatusInternalServerError, "failed to create asset", err)
 		return
 	}
